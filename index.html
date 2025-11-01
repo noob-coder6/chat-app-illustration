@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+  
+  <title>Frontend Mentor | Chat app CSS illustration</title>
+
+</head>
+<body>
+
+  <main class="container">
+    <section class="phone">
+      <div class="phone__screen">
+        <header class="phone__header">
+          <button class="phone__back-btn">&lt;</button>
+          <img src="./images/avatar.jpg" alt="Samuel Green" class="phone__avatar">
+          <div class="phone__user-info">
+            <p class="name">Samuel Green</p>
+            <p class="status">Available to Walk</p>
+          </div>
+          <div class="phone__menu">⋮</div>
+        </header>
+
+        <div class="phone__chat">
+          <p class="chat-bubble chat-bubble--left">That sounds great. I’d be happy with that.</p>
+          <p class="chat-bubble chat-bubble--left">Could you send over some pictures of your dog, please?</p>
+          
+          <div class="chat-images">
+            <img src="./images/dog-image-1.jpg" alt="A dog in the grass">
+            <img src="./images/dog-image-2.jpg" alt="A dog on the sand">
+            <img src="./images/dog-image-3.jpg" alt="A dog with a stick">
+          </div>
+
+          <p class="chat-bubble chat-bubble--right">Here are a few pictures. She’s a happy girl!</p>
+          <p class="chat-bubble chat-bubble--right">Can you make it?</p>
+
+          <p class="chat-bubble chat-bubble--left">She looks so happy! The time we discussed works. How long shall I take her out for?</p>
+
+          <div class="chat-option">
+            <label for="walk-30">
+              <input type="radio" name="walk-time" id="walk-30">
+              30 minute walk
+            </label>
+            <p class="price">$29</p>
+          </div>
+
+          <div class="chat-option">
+            <label for="walk-60">
+              <input type="radio" name="walk-time" id="walk-60">
+              1 hour walk
+            </label>
+            <p class="price">$49</p>
+          </div>
+        </div>
+
+        <div class="phone__input-area">
+          <input type="text" placeholder="Type a message…">
+          <button class="phone__submit-btn">&gt;</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="text-content">
+      <h1 class="text-content__title">Simple booking</h1>
+      <p class="text-content__description">
+        Stay in touch with our dog walkers through the chat interface. This makes it easy to 
+        discuss arrangements and make bookings. Once the walk has been completed you can rate 
+        your walker and book again all through the chat.
+      </p>
+    </section>
+  </main>
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>. <!-- TODO: Add your name and link -->
+  </footer>
+</body>
+</html>

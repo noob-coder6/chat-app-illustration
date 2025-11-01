@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+:root {
+    /* Primary Text */
+    --clr-primary-text-subheading: hsl(276, 100%, 81%);
+    --clr-primary-text-left-chat: hsl(276, 55%, 52%);
+    --clr-primary-text-right-chat: hsl(270, 7%, 64%);
+    --clr-primary-text-placeholder: hsl(206, 6%, 79%);
+    --clr-primary-text-main-heading: hsl(271, 36%, 24%);
+
+    /* Gradients */
+    --grad-pink: hsl(293, 100%, 63%);
+    --grad-purple: hsl(264, 100%, 61%);
+
+    /* Secondary */
+    --clr-secondary-white: hsl(0, 100%, 100%);
+    --clr-secondary-app-bg: hsl(270, 20%, 96%);
+    --clr-secondary-submit-bg: hsl(271, 36%, 24%);
+    --clr-secondary-radio-outline: hsl(289, 100%, 72%);
+
+    /* Font */
+    --ff-main: 'Rubik', sans-serif;
+    --fw-normal: 400;
+    --fw-medium: 500;
+    --fw-bold: 700;
+}
+
+/* --- CSS Reset --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--ff-main);
+    font-size: 16px;
+    background-color: var(--clr-secondary-app-bg);
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* --- Background Shapes --- */
+body::before,
+body::after {
+    content: '';
+    position: absolute;
+    width: 510px;
+    height: 510px;
+    border-radius: 510px;
+    z-index: -1;
+}
+
+body::before {
+    background: linear-gradient(to bottom, var(--grad-purple), var(--grad-pink));
+    top: -50px;
+    left: -150px;
+}
+
+body::after {
+    background: hsl(270, 20%, 96%, 0.5);
+    bottom: -150px;
+    right: -250px;
+}
+
+/* --- Main Layout --- */
+.container {
+    display: grid;
+    gap: 4rem;
+    padding: 4rem 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* --- Phone Component --- */
+.phone {
+    background-color: var(--clr-secondary-white);
+    border-radius: 2rem;
+    padding: 0.75rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+.phone__screen {
+    background-color: var(--clr-secondary-app-bg);
+    border-radius: 1.5rem;
+    overflow: hidden;
+}
+
+.phone__header {
+    background: linear-gradient(to right, var(--grad-purple), var(--grad-pink));
+    color: var(--clr-secondary-white);
+    padding: 2rem 1rem 1rem;
+    border-radius: 1.5rem 1.5rem 0.5rem 0.5rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.phone__header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 1.5rem;
+    background-color: var(--clr-secondary-white);
+    border-radius: 0 0 1rem 1rem;
+}
+
+.phone__back-btn {
+    border: none;
+    background: none;
+    color: white;
+    font-weight: var(--fw-bold);
+    font-size: 1rem;
+}
+
+.phone__avatar {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 1px solid var(--clr-secondary-white);
+}
+
+.phone__user-info .name {
+    font-weight: var(--fw-medium);
+    font-size: 0.875rem;
+}
+
+.phone__user-info .status {
+    font-size: 0.625rem;
+    color: var(--clr-primary-text-subheading);
+}
+
+.phone__menu {
+    margin-left: auto;
+    font-weight: var(--fw-bold);
+}
+
+.phone__chat {
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.6rem;
+}
+
+.chat-bubble {
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+    max-width: 65%;
+}
+
+.chat-bubble--left {
+    background-color: hsl(276, 55%, 52%, 0.1);
+    color: var(--clr-primary-text-left-chat);
+    border-bottom-left-radius: 0.25rem;
+    align-self: flex-start;
+}
+
+.chat-bubble--right {
+    background-color: var(--clr-secondary-white);
+    color: var(--clr-primary-text-right-chat);
+    border-bottom-right-radius: 0.25rem;
+    align-self: flex-end;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.chat-images {
+    display: flex;
+    gap: 0.5rem;
+    align-self: flex-end;
+}
+
+.chat-images img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+}
+
+.chat-option {
+    background: linear-gradient(to left, var(--grad-purple), var(--grad-pink));
+    color: var(--clr-secondary-white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem 0.75rem 0.75rem 0.25rem;
+    max-width: 75%;
+    align-self: flex-start;
+}
+
+.chat-option label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0.8;
+}
+
+.chat-option input {
+    accent-color: var(--grad-pink);
+}
+
+.chat-option .price {
+    font-weight: var(--fw-bold);
+    font-size: 0.875rem;
+}
+
+.phone__input-area {
+    padding: 0.75rem;
+    position: relative;
+}
+
+.phone__input-area input[type="text"] {
+    width: 100%;
+    border: none;
+    border-radius: 1.5rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.7rem;
+}
+
+.phone__input-area input[type="text"]::placeholder {
+    color: var(--clr-primary-text-placeholder);
+}
+
+.phone__submit-btn {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--clr-secondary-submit-bg);
+    color: var(--clr-secondary-white);
+    border: none;
+    border-radius: 50%;
+    width: 1.75rem;
+    height: 1.75rem;
+    font-size: 1rem;
+    font-weight: var(--fw-bold);
+    cursor: pointer;
+}
+
+/* --- Text Content --- */
+.text-content {
+    text-align: center;
+}
+
+.text-content__title {
+    color: var(--clr-primary-text-main-heading);
+    font-size: 2.5rem;
+    font-weight: var(--fw-medium);
+    margin-bottom: 1.5rem;
+}
+
+.text-content__description {
+    color: var(--clr-primary-text-right-chat);
+    line-height: 1.75;
+}
+
+/* --- Attribution --- */
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    padding: 1rem;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/* --- Desktop Layout --- */
+@media (min-width: 768px) {
+    body::before {
+        top: 0;
+        left: -100px;
+    }
+    body::after {
+        bottom: 0;
+        right: -100px;
+    }
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+    }
+    .text-content {
+        text-align: left;
+    }
+}
